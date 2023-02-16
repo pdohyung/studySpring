@@ -33,5 +33,12 @@ HTTP 메서드
     - 멱등 (Idempotent Methods) : 한 번 호출하던 여러번 호출하던 같은 결과가 조회된다. POST는 멱등이 아니다.
     - 캐시가능 (Cacheable Methods) : 응답 결과 리소스를 캐시해서 사용해도 되는가 ? GET, HEAD, POST, PATCH 캐시 가능
 
+HTTP API, FORM
+---
+    - 컬렉션 : POST 기반 등록, 서버가 리소스 URI 결정
+    - 스토어 : PUT 기반 등록, 클라이언트가 리소스 URI 결정
+    - FORM : 순서 html + html FORM 사용 GET, POST만 지원
+
+
   
 
