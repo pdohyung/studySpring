@@ -35,12 +35,21 @@ HTTP 메서드
 
 HTTP API, FORM
 ---
-    - 문서 (document) : 단일 개념 (파일 하나, 객체 인스턴스, 데이터베이스 row) ex) members/100, /file/star.jpg
-    - 컬렉션 : POST 기반 등록, 서버가 리소스 URI 생성하고 관리, 서버가 관리하는 리소스 디렉터리 ex) members
-    - 스토어 : PUT 기반 등록, 클라이언트가 리소스 URI를 알고 관리, 클라이언트가 관리하는 자원 저장소 ex) files
-    - FORM : 순서 html + html FORM 사용 GET, POST만 지원
-    - 컨트롤러, 컨트롤 URI : 문서, 컬렉션, 스토어로 해결하기 어려운 추가 프로세서 실행, 동사를 직접 사용, ex) /members/{id}/delete
+    * 문서 (document) : 단일 개념 (파일 하나, 객체 인스턴스, 데이터베이스 row) ex) members/100, /file/star.jpg
+    * 컬렉션 : POST 기반 등록, 서버가 리소스 URI 생성하고 관리, 서버가 관리하는 리소스 디렉터리 ex) members
+    * 스토어 : PUT 기반 등록, 클라이언트가 리소스 URI를 알고 관리, 클라이언트가 관리하는 자원 저장소 ex) files
+    * FORM : 순서 html + html FORM 사용 GET, POST만 지원
+    * 컨트롤러, 컨트롤 URI : 문서, 컬렉션, 스토어로 해결하기 어려운 추가 프로세서 실행, 동사를 직접 사용, ex) /members/{id}/delete
 
+HTTP 상태코드
+---
 
-  
-
+클라이언트가 보낸 요청의 처리 상태를 응답에서 알려주는 기능
+  * 1xx (Informational) : 요청이 수신되어 처리중
+  * 2xx (Successful) : 요청 정상 처리
+  * 3xx (Redirection) : 요청을 완료하려면 추가 행동이 필요
+    - 영구 리다이렉션 : 특정 리소스의 URI가 영구적으로 이동 ex) /members -> /users , /event -> /new-event
+    - 일시 리다이렉션 : 일시적인 변경 ex) 주문 완료 후 주문 내역 화면으로 이동, PRG (Post/Redirect/Get)
+    - 특수 리다이렉션 : 결과 대신 캐시를 사용
+  * 4xx (Client Error) : 클라이언트의 요청에 잘못된 문법등으로 서버가 요청을 수행할 수 없음, 클라이언트가 이미 잘못된 요청, 데이터를 보내고 있기 때문에, 똑같은 재시도가 실패함
+  * 5xx (Server Error) : 서버 내부 문제로 오류 발생, 애매하면 500 오류
