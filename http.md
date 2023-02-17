@@ -35,9 +35,11 @@ HTTP 메서드
 
 HTTP API, FORM
 ---
-    - 컬렉션 : POST 기반 등록, 서버가 리소스 URI 결정
-    - 스토어 : PUT 기반 등록, 클라이언트가 리소스 URI 결정
+    - 문서 (document) : 단일 개념 (파일 하나, 객체 인스턴스, 데이터베이스 row) ex) members/100, /file/star.jpg
+    - 컬렉션 : POST 기반 등록, 서버가 리소스 URI 생성하고 관리, 서버가 관리하는 리소스 디렉터리 ex) members
+    - 스토어 : PUT 기반 등록, 클라이언트가 리소스 URI를 알고 관리, 클라이언트가 관리하는 자원 저장소 ex) files
     - FORM : 순서 html + html FORM 사용 GET, POST만 지원
+    - 컨트롤러, 컨트롤 URI : 문서, 컬렉션, 스토어로 해결하기 어려운 추가 프로세서 실행, 동사를 직접 사용, ex) /members/{id}/delete
 
 
   
